@@ -1,34 +1,31 @@
 import java.io.*;
 import java.net.*;
 
-public class Servidor extends Thread{
-    Socket servicio= null;
+public class Servidor extends Thread {
+
+    Socket servicio = null;
     DataInputStream flujoDatosEntrada= null;
-    DataInputStream flujoDatosSalida= null;
-    
-    
-    public Servidor(Socket servicio, DataInputStream x, DataOutputStream y){//Constructor
+    DataOutputStream flujoDatosSalida = null;
 
-        this.servicio= servicio;
-        flujoDatosEntrada= x;
-        flujoDatosSalida= y;   
-    }
+    public Servidor(Socket servicio,DataInputStream x, DataOutputStream y){
 
-    public void run(){ //Esto es un método que es lo que correrá cada hilo de nuestro servidor
+        this.servicio=servicio;
+        flujoDatosEntrada =x;
+        flujoDatosSalida =y;
+    }  
 
-        System.out.println("Se aceptó una nueva conexión");
+    public void run(){
+
+        System.out.println("Se acepto una nueva conexion");
 
         try{
 
-            String mensaje= flujoDatosEntrada.readUTF(); //Recibimos un mensaje
-            
-            System.out.println(mensaje); //Imprimimos el mensaje recibido
+            String mensaje = flujoDatosEntrada.readUTF();
+
+            System.out.println(mensaje);
         }catch(Exception e){
-
+            
         }
-
     }
-
-    
 }
-    
+
