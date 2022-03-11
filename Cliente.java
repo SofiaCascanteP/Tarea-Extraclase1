@@ -5,7 +5,7 @@ public class Cliente {
 
     public static void main(String[] args){
 
-        String ip= "192.168.71.1";
+        String ip= "127.0.0.1";
         Socket conexion= null;
         int PUERTO= 5555;
 
