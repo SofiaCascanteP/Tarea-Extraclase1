@@ -12,8 +12,8 @@ public class Cliente {
           try{
               conexion =new Socket(ip,PUERTO);
 
-              DataOutputStream flujoDatosSalida = new DataOutputStream(conexion.getOutputStream());
-              flujoDatosSalida.writeUTF("Gracias por aceptarme");
+              DataOutputStream flujoDatosSalida = new DataOutputStream(conexion.getOutputStream()); //Creamos objeto para enviar 
+              flujoDatosSalida.writeUTF("Gracias por aceptarme"); //Mandamos el mensajeal servidor
 
             }catch(Exception e){
 
